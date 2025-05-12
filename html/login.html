@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="../img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Log In</title>
+</head>
+
+<body>
+    <header>
+        <h1 style="display: block;">Inicia sesión</h1>
+    </header>
+    <main>
+        <form id="userForm" action="../php/validacion.php" method="POST">
+            <input type="text" name="usuario" id="txt-usuario" placeholder="Usuario" required>
+
+            <input type="email" name="email" id="email" placeholder="Correo electrónico">
+
+            <div class="input-container">
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                <img id="eye-icon" class="eye-icon"
+                    src="https://img.icons8.com/material-outlined/24/000000/invisible.png" alt="Mostrar/Ocultar"
+                    onclick="togglePassword()">
+            </div>
+
+            <input type="submit" value="Entrar">
+            <a href="ver-registrar.html">Pedidos</a>
+        </form>
+    </main>
+</body>
+<script src="../js/login.js"></script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clima</title>
+</head>
+<body>
+    <h2>Clima en Buenos Aires</h2>
+    <div id="clima"></div>
+
+
+
+    <script>
+        const apiKey = "6c3545b99bf3cd4efbbccc4f863c632a";
+        const ciudad = "Buenos Aires";
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.cod === 200) {
+                    const temp = data.main.temp;
+                    const desc = data.weather[0].description;
+                    const icon = data.weather[0].icon;
+                    document.getElementById("clima").innerHTML = `
+                        <p>Temperatura: ${temp} °C</p>
+                        <p>${desc}</p>
+                        <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="icono">
+                    `;
+                } else {
+                    document.getElementById("clima").textContent = "Ciudad no encontrada.";
+                }
+            })
+            .catch(error => {
+                console.error("Error al obtener el clima:", error);
+                document.getElementById("clima").textContent = "Error al conectar con la API.";
+            });
+    </script>
+</body>
+</html>

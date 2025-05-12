@@ -1,0 +1,101 @@
+@font-face {font-family: 'titulo';src: url(font/Pacifico-Regular.ttf);}
+@font-face {font-family: 'texto';src: url(font/Poppins-Regular.ttf);}
+@font-face {font-family: 'nav';src: url(font/Borel-Regular.ttf);}
+
+:root {
+    --gris: #8d8685;
+    --blanco: #ffffff;
+    --rojo1: #f51c16;
+    --rojo2: #b21115;
+    --rojo3: #5b070f;
+}
+
+body {
+    background-color: #dbdbdb;
+    margin: 20px;
+    padding: 15px;
+}
+
+h1{font-size: 6.5em; color: var(--rojo3); font-family: "titulo";}
+h2 {font-size: 4em; font-family: nav; color: var(--blanco); padding-top: 50px;text-align: center; background-color: var(--rojo2);}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+a{
+    text-decoration: none;
+    color: var(--rojo1);
+    font-weight: bold;
+}
+
+
+footer{
+    margin-top: 100px;
+    color: rgb(85, 85, 85);
+}
+
+/* Diseño de tarjeta para móviles */
+@media (max-width: 950px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none; /* Oculta los encabezados */
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    td {
+        text-align: left;
+        padding: 8px;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 140px;
+        color: #5b070f;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        text-align: center;
+    }
+
+    body {
+        margin: 10px;
+        padding: 10px;
+        font-family: 'texto';
+    }
+
+    a img {
+        height: 30px;
+    }
+}

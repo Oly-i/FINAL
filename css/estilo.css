@@ -1,0 +1,317 @@
+*{box-sizing: border-box;}
+
+@font-face {font-family: 'titulo';src: url(font/Pacifico-Regular.ttf);}
+@font-face {font-family: 'texto';src: url(font/Poppins-Regular.ttf);}
+@font-face {font-family: 'nav';src: url(font/Borel-Regular.ttf);}
+
+:root {
+    --gris: #8d8685;
+    --blanco: #ffffff;
+    --rojo1: #f51c16;
+    --rojo2: #b21115;
+    --rojo3: #5b070f;
+}
+html {scroll-behavior: smooth;}
+body{background-color: var(--blanco); margin: auto;}
+html, body {width: 100%;max-width: 100%;overflow-x: hidden;}
+header .container {background-color: var(--rojo2);}
+h1{font-size: 6.5em}
+h2 {font-size: 4em; font-family: nav; color: var(--blanco); padding-top: 50px;text-align: center; background-color: var(--rojo2);}
+h3{font-size: 3em; font-family: texto; color: var(--rojo2); padding: 50px;}
+p{font-family: texto;}
+.precio{padding-bottom: 20px;padding-left: 50px;}
+
+/* NAV */
+header .logo {
+    margin: 0;
+    padding: 25px 30px
+    ;
+    font-family: 'titulo';
+    font-size: 2.5em;
+    color: var(--blanco);
+}
+.logo:hover{
+    color: var(--rojo3);
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, .8);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-family: 'nav';
+    font-size: 1.5em;
+    color: #ffffff;
+    transition: .4s;
+}
+
+nav a:hover {
+    color: var(--gris);
+}
+/* NAV */
+
+/* HERO */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 350px;
+    color: var(--rojo1);
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)), url(../img/HERO_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: 'titulo';
+    text-shadow: 2px 2px 2px rgba(185, 185, 185, 0.9);
+}
+/* HERO */
+
+/* IMAGENES STOCK 
+https://stockcake.com/i/delicious-donut-assortment_906493_577385
+*/
+
+/* CARRUSEL ESPECIALES */
+#especiales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container-carousel {
+    width: 600px; 
+    height: 300px;
+    background: #ffffff;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carruseles {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-section {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.slider-section img {
+    width: 50%; 
+    height: 100%;
+    object-fit: contain; 
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    user-select: none;
+}
+
+.btn-left {
+    left: 15px;
+}
+
+.btn-right {
+    right: 15px;
+}
+
+.btn-left:hover, .btn-right:hover {
+    opacity: 50%;
+}
+/* CARRUSEL ESPECIALES */
+
+/*CLASICAS Y PREMIUM*/
+#clasicas {
+    display: flex;
+    gap: 10px; 
+    overflow-x: hidden; 
+    padding: 0px;
+    scrollbar-width: none; 
+    flex-wrap: wrap;
+}
+
+#clasicas::-webkit-scrollbar {
+    display: none; 
+}
+
+.lado {
+    flex: 1 1 calc(20% - 8px); 
+    min-width: 150px; 
+    height: auto;
+    aspect-ratio: 1/1; 
+    margin-bottom: 10px;
+}
+.lado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px; 
+    box-shadow: 5px 5px 7px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; 
+}
+
+.lado img:hover {
+    transform: scale(1.05); 
+}
+/*CLASICAS Y PREMIUM*/
+
+/*SUCURSALES*/
+#sucursales {
+    text-align: center;
+}
+
+.cuadrantes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cuadrante {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.cuadrante iframe {
+    padding-bottom: 20px;
+}
+
+.cuadrante h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.cuadrante p {
+    font-size: 0.9rem;
+    padding: 0 10px 10px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+
+/*FOOTER*/
+footer {
+    background-color: var(--rojo3);
+    padding: 35px;
+    margin-top: 50px;
+}
+
+footer p {
+    color: var(--blanco);
+}
+
+footer .container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*FOOTER*/
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+    .cuadrantes-container {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+    
+    .cuadrante {
+        padding: 12px;
+    }
+    
+    .cuadrante h3 {
+        font-size: 1.1rem;
+    }
+    
+    .cuadrante p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cuadrantes-container {
+        gap: 15px;
+    }
+    
+    .cuadrante {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 800px){
+    header .container{
+        flex-direction: row; 
+        justify-content: space-between;
+    }
+
+    nav{
+        flex-direction: row; 
+        padding-bottom: 0;
+        font-size: smaller;
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 536px) {
+    .lado {
+        flex: 1 1 100%;
+        min-width: 100%;  
+    }
+    #hero{
+        background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)), url(../img/HERO.jpg);
+    } 
+}
+
+@media (max-width: 618px) {
+    .lado {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
